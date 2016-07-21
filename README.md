@@ -1,2 +1,2 @@
-# MEANTutorial
+# MEAN Tutorial
 Learning MEAN stack
