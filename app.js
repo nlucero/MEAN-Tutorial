@@ -2,9 +2,20 @@
   'use strict';
 
   angular
-    .module('flapperNews', [])
+    .module('flapperNews', ['ui.router'])
+    .config(['$stateProvider', '$urlRouterProvider', ConfigFunction])
     .controller('MainCtrl', ['$scope', 'postsService', MainCtrl])
     .factory('postsService', [PostsService])
+
+  function ConfigFunction($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('/home', {
+        url: '/home',
+        templateUrl: '/home.html',
+        controller: 'MainCtrl',
+        controllerAs: 'mainCtrl'
+      })
+  }
 
   function MainCtrl($scope, postsService) {
       var vm = this
